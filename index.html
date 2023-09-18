@@ -11,7 +11,7 @@
 
         // Check if the user agent contains "Android" (for Android devices)
         if (/android/i.test(userAgent)) {
-            window.location.href = "https://play.google.com/store/apps/details?id=com.holidaypasal";
+            window.location.href = "market://details?id=com.example.myapp";
         }
         // Check if the user agent contains "iPhone" or "iPad" (for iOS devices)
         else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
