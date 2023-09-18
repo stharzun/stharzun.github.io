@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>App Store / Play Store Redirect</title>
+</head>
+<body>
+    <p>If you are on an Android device, you will be redirected to the Google Play Store.</p>
+    <p>If you are on an iOS device, you will be redirected to the Apple App Store.</p>
+
+    <script type="text/javascript">
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        // Check if the user agent contains "Android" (for Android devices)
+        if (/android/i.test(userAgent)) {
+            window.location.href = "https://play.google.com/store/apps/details?id=YOUR_APP_PACKAGE_NAME";
+        }
+        // Check if the user agent contains "iPhone" or "iPad" (for iOS devices)
+        else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            window.location.href = "https://apps.apple.com/us/app/your-app-name/idYOUR_APP_ID";
+        }
+        // If the user agent doesn't match Android or iOS, you can provide a default link or handle it as needed.
+        else {
+            // Default redirection or fallback URL
+            window.location.href = "https://example.com";
+        }
+    </script>
+</body>
+</html>
